@@ -18,7 +18,8 @@ Ubuntu
 
 Set up environment, install Flask & other modules
 	
-	mkdir project && cd project
+	git clone https://github.com/mattfelsen/LP_RPG.git
+	cd LP_RPG
 	sudo pip install virtualenv
 	virtualenv venv
 	. venv/bin/activate
