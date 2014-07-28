@@ -1,18 +1,25 @@
-## Software
+## Software Setup
 - Storage: MySQL
 - Backend: Python, Flask, SQLAlchemy
 - Frontend: Bootstrap, Velocity.js, jQuery/Zepto
 
 Notes
 
-Install pip & virtualenv if the machine doesn't have them
+Install pip if the machine doesn't have it
+
+OS X
 
 	sudo easy_install pip
-	sudo pip install virtualenv
+
+Ubuntu
+
+	wget https://bootstrap.pypa.io/get-pip.py
+	sudo python get-pip.py
 
 Set up environment, install Flask & other modules
 	
 	mkdir project && cd project
+	sudo pip install virtualenv
 	virtualenv venv
 	. venv/bin/activate
 	pip install flask
@@ -22,7 +29,7 @@ Set up environment, install Flask & other modules
 ## Routes for Views
 
 Endpoint | Request | Description
--|-|-
+---|---|---
 /admin | Browser | Admin interface
 /game | Browser | Main game page for users
 /game/begin | AJAX | Returns a random set of questions for a new round
@@ -36,7 +43,7 @@ Endpoint | Request | Description
 - question
 
 Method | Route | Action
--|-|-
+---|---|---
 GET | /questions | list all questions
 GET | /questions/<int:id> | list specifc question and its associated token values
 POST | /questions | create a new question
@@ -49,7 +56,7 @@ DELETE | /questions/<int:id> | delete a question
 - name
 
 Method | Route | Action
--|-|-
+---|---|---
 GET | /tokens | list all tokens
 GET | /tokens/<int:id> | list specifc token
 POST | /tokens | create a new token
@@ -66,7 +73,7 @@ DELETE | /tokens/<int:id> | delete a token
 - no_points
 
 Method | Route | Action
--|-|-
+---|---|---
 GET | /token_values | list all tokens
 GET | /token_values/<int:id> | list points for a specifc question
 POST | /token_values | create a new set of values
@@ -81,9 +88,9 @@ DELETE | /token_values/<int:id> | delete a set of values
 - value
 
 Method | Route | Action
--|-|-
-GET | /tokens | list all tokens
-GET | /tokens/<int:id> | list specifc token
-POST | /tokens | create a new token
-PUT | /tokens/<int:id> | edit a token
-DELETE | /tokens/<int:id> | delete a token
+---|---|---
+GET | /settings | list all settings
+GET | /settings/<int:id> | list specifc setting
+POST | /settings | create a new setting
+PUT | /settings/<int:id> | edit a setting
+DELETE | /settings/<int:id> | delete a setting
