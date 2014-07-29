@@ -11,6 +11,7 @@ $(document).ready(function() {
         for (var i in tokens) {
             tokens[i].score = 0;
         }
+        updateScore();
     });
 
     // Fetch the questions for this round and load them into the queue
@@ -52,7 +53,7 @@ $(document).ready(function() {
 
         var html = '';
         for (var i in tokens) {
-            html += '<h4>' + tokens[i].name + ':' + tokens[i].score + '</h4>';
+            html += '<h4>' + tokens[i].name + ': ' + tokens[i].score + '</h4>';
         }
 
         $('#score').html(html);
