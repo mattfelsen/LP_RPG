@@ -39,6 +39,7 @@ def game_begin():
         tokens = []
         for tv in row.tokens:
             token = {
+                'token_id': tv.token.id,
                 'token_value_id': tv.id,
                 'name': tv.token.name,
                 'yes_points': tv.yes_points,
@@ -80,6 +81,7 @@ def questions():
             tokens = []
             for tv in row.tokens:
                 token = {
+                    'token_id': tv.token.id,
                     'token_value_id': tv.id,
                     'name': tv.token.name,
                     'yes_points': tv.yes_points,
