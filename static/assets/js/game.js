@@ -22,13 +22,40 @@ $(document).ready(function() {
     });
 
     // Advance the question upon clicking a button
-    $('a.btn').click(function() {
+    $('#yes').click(function() {
+        for (var i in queue[index].tokens) {
+            tokens[i].score += queue[index].tokens[i].yes_points;
+        }
         loadNextQuestion();
-    });
+    })
+    $('#no').click(function() {
+        for (var i in queue[index].tokens) {
+            tokens[i].score += queue[index].tokens[i].no_points;
+        }
+        loadNextQuestion();
+    })
 
     function loadNextQuestion() {
-        index = ++index % queue.length;
-        $('#question').text(queue[index].question)
+        index++;
+        if (index == queue.length) {
+            $('#question').text('Thanks for playing!');
+            $('#buttons').fadeOut('fast');
+        } else {
+            $('#question').html(queue[index].question);
+        }
+
+        updateScore();
+    }
+
+    function updateScore() {
+        $('#score').html('');
+
+        var html = '';
+        for (var i in tokens) {
+            html += '<h4>' + tokens[i].name + ':' + tokens[i].score + '</h4>';
+        }
+
+        $('#score').html(html);
     }
 
 });

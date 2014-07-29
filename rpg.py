@@ -14,16 +14,15 @@ db = SQLAlchemy(app)
 #############
 
 @app.route('/')
-def hello():
-    return 'Sup'
+@app.route('/game', methods=['GET'])
+def game():
+    return render_template('game.html')
 
 @app.route('/admin', methods=['GET'])
 def admin():
     return render_template('admin.html')
 
-@app.route('/game', methods=['GET'])
-def game():
-    return render_template('game.html')
+
 
 @app.route('/game/begin', methods=['GET'])
 def game_begin():

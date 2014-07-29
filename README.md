@@ -1,7 +1,7 @@
 ## Software Setup
 - Storage: MySQL
 - Backend: Python, Flask, SQLAlchemy
-- Frontend: Bootstrap, Velocity.js, jQuery/Zepto
+- Frontend: Bootstrap, jQuery
 
 Notes
 

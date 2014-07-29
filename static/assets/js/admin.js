@@ -4,6 +4,7 @@
 var headers = {
     'questions': ['id', 'question'],
     'tokens': ['id', 'name'],
+    'token_values': ['id', 'question_id', 'token_id', 'yes_points', 'no_points'],
     'settings': ['id', 'key', 'value', 'description'],
 }
 
